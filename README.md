@@ -2,6 +2,8 @@
 
 **Babeș-Bolyai University, Cluj-Napoca**
 
+[Dávid Szilágyi](mailto:davtszi@gmail.com), Răzvan Filea, Kuderna-Iulian Bența
+
 [Paper](https://doi.org/10.33436/v35i3y202508) ·
 [Journal page](https://rria.ici.ro/en/vol-35-no-3-2025/accelerating-intelligent-vehicle-vision-a-hybrid-python-rust-architecture-with-partial-blocking-inter-process-communication/) ·
 [BibTeX](#citation)
@@ -16,9 +18,11 @@ This architecture allows researchers to develop deep learning models in **Python
 
 ### Demo
 
-https://github.com/davszi/AutoVision/raw/main/assets/AutoVisionDemo.mp4
+<p align="center">
+  <video src="https://github.com/davszi/AutoVision/raw/main/assets/AutoVisionDemo.mp4" controls width="800"></video>
+</p>
 
-*(If the player does not load inline, [download the demo video](assets/AutoVisionDemo.mp4).)*
+*(If the player does not load inline on your GitHub view, open [assets/AutoVisionDemo.mp4](assets/AutoVisionDemo.mp4) directly.)*
 
 ## Key Features
 
@@ -107,11 +111,9 @@ To view the output (ensure the perception stack is running or writing to shared 
 *   **Windows Users:** Ensure you have "Desktop development with C++" installed via Visual Studio Installer, as it's required for compiling Rust code.
 *   **Shared Memory Permissions:** On Linux/Docker, you may need to adjust `shm` limits or permissions. 
 
-## Authors
+## Acknowledgements
 
-*   **Dávid Szilágyi** (davtszi@gmail.com) — Lead ML engineer & Python specialist. YOLOv11s perception pipeline, fine-tuning and domain adaptation, geometric lane detection, Python-side integration with the shared-memory architecture.
-*   **Răzvan Filea** (razvan.filea@stud.ubbcluj.ro) — Systems architect & Rust engineer. `rs_ipc` shared-memory layer, partial-blocking scheduling algorithm, native Rust visualization UI (`rs_ui`, Iced).
-*   **Kuderna-Iulian Bența** — Academic supervisor (Babeș-Bolyai University, Cluj-Napoca).
+Special thanks to **Armin Torok** for building the web-based monitoring interface (Next.js / React) used during development.
 
 ## Development Timeline
 
