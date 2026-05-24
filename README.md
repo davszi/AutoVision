@@ -18,7 +18,11 @@ This architecture allows researchers to develop deep learning models in **Python
 
 ### Demo
 
-https://github.com/davszi/AutoVision/releases/download/v1.0-media/AutoVisionDemo.mp4
+<p align="center">
+  <video src="https://github.com/davszi/AutoVision/releases/download/v1.0-media/AutoVisionDemo.mp4" controls width="800"></video>
+</p>
+
+*(If the player does not load inline, [open the demo video](https://github.com/davszi/AutoVision/releases/download/v1.0-media/AutoVisionDemo.mp4) in a new tab.)*
 
 ## Key Features
 
