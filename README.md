@@ -1,8 +1,24 @@
 # AutoVision
 
-AutoVision is a real-time autonomous driving perception stack. It leverages a **Hybrid Python–Rust Architecture** to solve the "Python Latency Bottleneck" by offloading inter-process communication (IPC) and synchronization to a high-performance **Rust** shared-memory layer.
+**Babeș-Bolyai University, Cluj-Napoca**
+
+[Paper](https://doi.org/10.33436/v35i3y202508) ·
+[Journal page](https://rria.ici.ro/en/vol-35-no-3-2025/accelerating-intelligent-vehicle-vision-a-hybrid-python-rust-architecture-with-partial-blocking-inter-process-communication/) ·
+[BibTeX](#citation)
+
+AutoVision is a real-time autonomous driving perception stack and the reference implementation for our paper *"Accelerating intelligent vehicle vision: A hybrid Python–Rust architecture with partial-blocking inter-process communication"* (RRIA 35(3), 2025). It leverages a **Hybrid Python–Rust Architecture** to solve the "Python Latency Bottleneck" by offloading inter-process communication (IPC) and synchronization to a high-performance **Rust** shared-memory layer.
 
 This architecture allows researchers to develop deep learning models in **Python** (using PyTorch & YOLO) while ensuring deterministic, low-latency data flow suitable for real-time control.
+
+<p align="center">
+  <img src="assets/Architecture.png" alt="AutoVision architecture overview" width="800">
+</p>
+
+### Demo
+
+https://github.com/davszi/AutoVision/raw/main/assets/AutoVisionDemo.mp4
+
+*(If the player does not load inline, [download the demo video](assets/AutoVisionDemo.mp4).)*
 
 ## Key Features
 
@@ -83,7 +99,7 @@ To view the output (ensure the perception stack is running or writing to shared 
 *   `rs_ipc/`: Rust crate implementing the Shared Memory IPC and Python bindings.
 *   `rs_ui/`: Rust-based visualization tool.
 *   `perception/`: Python modules for YOLO models and lane detection logic.
-*   `reporting/`: Project documentation and reports.
+*   `assets/`: Architecture diagram, demo video, and slide-deck presentation PDF.
 *   `files/`: Configuration and resource files.
 
 ## Troubleshooting
@@ -91,19 +107,11 @@ To view the output (ensure the perception stack is running or writing to shared 
 *   **Windows Users:** Ensure you have "Desktop development with C++" installed via Visual Studio Installer, as it's required for compiling Rust code.
 *   **Shared Memory Permissions:** On Linux/Docker, you may need to adjust `shm` limits or permissions. 
 
-## Contributors
-*   **David Szilagyi** (david.szilagyi2@stud.ubbcluj.ro)
-    *   **Role:** Lead Machine Learning Engineer & Python Specialist
-    *   **Responsibilities:** Developed the core YOLOv11s perception pipeline, including fine-tuning and domain adaptation. Implemented the custom geometric lane detection algorithm and managed the Python-side integration with the shared memory architecture.
-    *   **Skills:** Python, PyTorch, Ultralytics YOLO, OpenCV, Computer Vision, Data Engineering.
-*   **Razvan Filea** (razvan.filea@stud.ubbcluj.ro)
-    *   **Role:** Systems Architect & Rust Engineer
-    *   **Responsibilities:** Designed and implemented the high-performance `rs_ipc` shared-memory communication layer and the Partial-Blocking scheduling algorithm. Also developed the native Rust visualization UI (`rs_ui`) using the Iced framework.
-    *   **Skills:** Rust, Systems Programming, IPC (Shared Memory), Concurrency, Iced (GUI), FFI (PyO3).
-*   **Armin Torok** (armin.torok@stud.ubbcluj.ro)
-    *   **Role:** Frontend Developer & Web Interface Engineer
-    *   **Responsibilities:** Built the modern web-based monitoring interface using Next.js and React. This frontend provides a flexible and accessible way to visualize pipeline status and metadata remotely.
-    *   **Skills:** TypeScript, Next.js, React, TailwindCSS, Web Development, UX/UI Design.
+## Authors
+
+*   **Dávid Szilágyi** (davtszi@gmail.com) — Lead ML engineer & Python specialist. YOLOv11s perception pipeline, fine-tuning and domain adaptation, geometric lane detection, Python-side integration with the shared-memory architecture.
+*   **Răzvan Filea** (razvan.filea@stud.ubbcluj.ro) — Systems architect & Rust engineer. `rs_ipc` shared-memory layer, partial-blocking scheduling algorithm, native Rust visualization UI (`rs_ui`, Iced).
+*   **Kuderna-Iulian Bența** — Academic supervisor (Babeș-Bolyai University, Cluj-Napoca).
 
 ## Development Timeline
 
@@ -145,3 +153,27 @@ gantt
     Rust UI (rs_ui) Development               :active, ui1,  2025-10-01, 2026-01-01
     Web Frontend (Next.js) Development        :active, ui2,  2025-10-01, 2026-01-01
 ```
+
+## Citation
+
+If you use AutoVision in academic work, please cite:
+
+> Szilágyi, D., Filea, R., & Bența, K. (2025). Accelerating intelligent vehicle vision: A hybrid Python–Rust architecture with partial-blocking inter-process communication. *Romanian Journal of Information Technology and Automatic Control*, **35**(3), 101–116. https://doi.org/10.33436/v35i3y202508
+
+```bibtex
+@article{szilagyi2025autovision,
+  title   = {Accelerating intelligent vehicle vision: A hybrid Python--Rust architecture with partial-blocking inter-process communication},
+  author  = {Szil{\'a}gyi, D{\'a}vid and Filea, R{\u a}zvan and Ben{\c t}a, Kuderna-Iulian},
+  journal = {Romanian Journal of Information Technology and Automatic Control},
+  volume  = {35},
+  number  = {3},
+  pages   = {101--116},
+  year    = {2025},
+  doi     = {10.33436/v35i3y202508},
+  url     = {https://doi.org/10.33436/v35i3y202508}
+}
+```
+
+A slide-deck presentation summarising the project is bundled in this repository: [`assets/AutoVision-slides.pdf`](assets/AutoVision-slides.pdf).
+
+Keywords: Intelligent Vehicles · Real-Time Vision · Shared Memory IPC · Python–Rust Integration · Partial-Blocking Communication.
